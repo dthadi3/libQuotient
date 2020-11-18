@@ -38,6 +38,12 @@ matrix: # TODO: consider parallel execution, this thing takes an hour to run
     cache:
       directories:
       - $HOME/Library/Caches/Homebrew
+  - os: linux
+    arch: ppc64le
+    compiler: gcc
+  - os: linux
+    arch: ppc64le
+    compiler: clang
   # Check a few more advanced configurations
   - os: linux
     compiler: gcc
@@ -46,6 +52,18 @@ matrix: # TODO: consider parallel execution, this thing takes an hour to run
     compiler: clang
     env: [ E2EE=1 ]
   - os: linux
+    compiler: gcc
+    env: [ E2EE=1 ]
+  - os: linux
+    arch: ppc64le
+    compiler: gcc
+    env: [ E2EE=1, UPDATE_API=1 ] # Check UPDATE_API with one of fatter options
+  - os: linux
+    arch: ppc64le
+    compiler: clang
+    env: [ E2EE=1 ]
+  - os: linux
+    arch: ppc64le
     compiler: gcc
     env: [ E2EE=1 ]
 
